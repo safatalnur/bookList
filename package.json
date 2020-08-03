@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/safatalnur/bookList/issues"
   },
-  "homepage": "https://github.com/safatalnur/bookList#readme"
+  "homepage": "https://github.com/safatalnur/bookList#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

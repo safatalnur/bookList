@@ -1,9 +1,20 @@
 const express = require('express')
+const mustacheExpress = require('mustache-express')
+require('dotenv').config()
 
 const app = express()
 
+const mustache = mustacheExpress()
+mustache.cache = null
+app.engine('mustache', mustache)
+app.set('view engine', 'mustache')
+
 app.use(express.static('public'))
 
-app.listen(5005, () => {
-    console.log('listening on port 5005.')
+app.get('/list', (req, res) => {
+    res.render('list')
+})
+
+app.listen(process.env.PORT, () => {
+    console.log(`listening on port ${process.env.PORT}`)
 })
